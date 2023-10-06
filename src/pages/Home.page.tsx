@@ -1,9 +1,9 @@
-import { Welcome } from '../components/Welcome/Welcome';
+import { useRef } from 'react';
 import { Carousel } from '@mantine/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import { useRef } from 'react';
+import { img1, img2, img3, img4, img5, img6, img7, img8, img9, img10 } from '../assets';
 
-import { img1, img2, img3, img4 } from '../assets';
+import { ProductSection } from '../components';
 
 export default function HomePage() {
   const autoplay = useRef(Autoplay({ delay: 5000 }));
@@ -75,6 +75,12 @@ export default function HomePage() {
           </Carousel.Slide>
         </Carousel>
       </div>
+
+      <ProductSection imgUrl={img5} nameSection={'Todos los productos'} />
+      <ProductSection imgUrl={img7} nameSection={'Productos en polvo'} />
+      <ProductSection imgUrl={img8} nameSection={'Productos Liquidos'} />
+      <ProductSection imgUrl={img9} nameSection={'Super Kits'} />
+      <ProductSection imgUrl={img10} nameSection={'Quiero ser  mayorista'} />
     </>
   );
 }

@@ -20,7 +20,7 @@ function Navbar() {
   const [opened, { toggle }] = useDisclosure();
   const { setColorScheme, colorScheme } = useMantineColorScheme();
 
-  const [modeToggle, setModeToggle] = useState(false);
+  const [modeToggle, setModeToggle] = useState(true);
 
   const setLightMode = () => {
     setColorScheme('light');
