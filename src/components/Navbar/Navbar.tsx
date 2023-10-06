@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LogoDabena, LogoTextoDabena } from '../../assets';
+import { LogoDabena, LogoDabenaTextoBlanco, LogoDabenaTextoAzul } from '../../assets';
 import { IconMoonStars, IconSun } from '@tabler/icons-react';
 
 import {
@@ -18,7 +18,7 @@ import classes from './MobileNavbar.module.css';
 
 function Navbar() {
   const [opened, { toggle }] = useDisclosure();
-  const { setColorScheme } = useMantineColorScheme();
+  const { setColorScheme, colorScheme } = useMantineColorScheme();
 
   const [modeToggle, setModeToggle] = useState(false);
 
@@ -56,7 +56,11 @@ function Navbar() {
 
           <Group justify="space-between" style={{ flex: 1 }}>
             <Image src={LogoDabena} visibleFrom="sm" height={45} />
-            <Image src={LogoTextoDabena} hiddenFrom="sm" height={45} ml={'auto'}/>
+            {colorScheme === 'light' ? (
+              <Image src={LogoDabenaTextoAzul} hiddenFrom="sm" height={45} ml={'auto'} />
+            ) : (
+              <Image src={LogoDabenaTextoBlanco} hiddenFrom="sm" height={45} ml={'auto'} />
+            )}
 
             <Group ml="xl" gap={0} visibleFrom="sm" justify="center" align="center">
               <UnstyledButton className={classes.control}>Home</UnstyledButton>

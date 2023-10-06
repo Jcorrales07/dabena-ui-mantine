@@ -1,6 +1,19 @@
-import { Text, Container, ActionIcon, Group, rem } from '@mantine/core';
-import { IconBrandYoutube, IconBrandInstagram, IconBrandFacebook, IconMoon } from '@tabler/icons-react';
-import {  LogoTextoDabena } from '../../assets/';
+import {
+  Text,
+  Container,
+  ActionIcon,
+  Group,
+  rem,
+  useMantineColorScheme,
+  Image,
+} from '@mantine/core';
+import {
+  IconBrandYoutube,
+  IconBrandInstagram,
+  IconBrandFacebook,
+  IconMoon,
+} from '@tabler/icons-react';
+import { LogoDabenaTextoAzul, LogoDabenaTextoBlanco } from '../../assets/';
 import classes from '../Footer/FooterLinks.module.css';
 
 const data = [
@@ -34,6 +47,7 @@ const data = [
 ];
 
 export default function FooterLinks() {
+  const { colorScheme } = useMantineColorScheme();
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
       <Text<'a'>
@@ -59,7 +73,11 @@ export default function FooterLinks() {
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <img src={LogoTextoDabena} alt="Dabena logo" height={50} />
+          {colorScheme === 'light' ? (
+            <img src={LogoDabenaTextoAzul} alt="Dabena logo" height={50} />
+          ) : (
+            <img src={LogoDabenaTextoBlanco} alt="Dabena logo" height={50} />
+          )}
           <Text size="xs" c="dimmed" className={classes.description}>
             Build fully functional accessible web applications faster than ever
           </Text>
