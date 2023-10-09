@@ -10,15 +10,18 @@ import {
   useMantineColorScheme,
   rem,
   Image,
+  Container,
 } from '@mantine/core';
 
 import { useDisclosure } from '@mantine/hooks';
 
 import classes from './MobileNavbar.module.css';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
   const [opened, { toggle }] = useDisclosure();
   const { setColorScheme, colorScheme } = useMantineColorScheme();
+  const navigate = useNavigate();
 
   const [modeToggle, setModeToggle] = useState(true);
 
@@ -55,11 +58,43 @@ function Navbar() {
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
 
           <Group justify="space-between" style={{ flex: 1 }}>
-            <Image src={LogoDabena} visibleFrom="sm" height={45} />
+            <Image
+              src={LogoDabena}
+              visibleFrom="sm"
+              height={45}
+              style={{
+                cursor: 'pointer',
+              }}
+              onClick={() => {
+                navigate('/');
+              }}
+            />
             {colorScheme === 'light' ? (
-              <Image src={LogoDabenaTextoAzul} hiddenFrom="sm" height={45} ml={'auto'} />
+              <Image
+                src={LogoDabenaTextoAzul}
+                hiddenFrom="sm"
+                height={45}
+                ml={'auto'}
+                style={{
+                  cursor: 'pointer',
+                }}
+                onClick={() => {
+                  navigate('/');
+                }}
+              />
             ) : (
-              <Image src={LogoDabenaTextoBlanco} hiddenFrom="sm" height={45} ml={'auto'} />
+              <Image
+                src={LogoDabenaTextoBlanco}
+                hiddenFrom="sm"
+                height={45}
+                ml={'auto'}
+                style={{
+                  cursor: 'pointer',
+                }}
+                onClick={() => {
+                  navigate('/');
+                }}
+              />
             )}
 
             <Group ml="xl" gap={0} visibleFrom="sm" justify="center" align="center">

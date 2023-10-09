@@ -1,9 +1,19 @@
 import { BackgroundImage, Card, Flex, UnstyledButton } from '@mantine/core';
 import { IconArrowRight } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
+import { redirect, useNavigate } from 'react-router-dom';
 
-function ProductSection({ imgUrl, nameSection }: { imgUrl: string; nameSection: string }) {
+function ProductSection({
+  imgUrl,
+  nameSection,
+  path,
+}: {
+  imgUrl: string;
+  nameSection: string;
+  path: string;
+}) {
   const [imageHeight, setImageHeight] = useState<number | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const img = new Image();
@@ -14,8 +24,12 @@ function ProductSection({ imgUrl, nameSection }: { imgUrl: string; nameSection: 
     };
   }, [imgUrl]);
 
+  const redirectTo = () => {
+    navigate(path);
+  };
+
   return (
-    <Card radius={0} mt={40} p={0}>
+    <Card radius={0} mt={40} p={0} onClick={redirectTo}>
       <BackgroundImage
         src={imgUrl}
         radius="sm"
@@ -39,6 +53,7 @@ function ProductSection({ imgUrl, nameSection }: { imgUrl: string; nameSection: 
             bottom: 10,
             borderRadius: '500px',
           }}
+          onClick={redirectTo}
         >
           {nameSection.toUpperCase()}
           <IconArrowRight />

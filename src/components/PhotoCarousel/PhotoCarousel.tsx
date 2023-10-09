@@ -7,11 +7,7 @@ function PhotoCarousel() {
   const autoplay = useRef(Autoplay({ delay: 5000 }));
 
   return (
-    <div
-      style={{
-        marginTop: '60px',
-      }}
-    >
+    <div>
       <Carousel
         withIndicators
         height={500}

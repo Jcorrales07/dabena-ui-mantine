@@ -1,6 +1,16 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Carousel, Embla } from '@mantine/carousel';
 import { Progress, Title } from '@mantine/core';
+import ProductCard from '../ProductCard/ProductCard';
+import { idealPhoto } from '../../assets';
+
+const product = {
+  id: 1,
+  name: 'Polvo',
+  description: 'Polvo para preparar bebida',
+  price: 100,
+  imageUrl: idealPhoto,
+};
 
 function ProductCarousel() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -31,82 +41,36 @@ function ProductCarousel() {
       </Title>
       <Carousel
         dragFree
-        slideSize="70%"
+        slideSize={{xs: "30%"}}
         slideGap="md"
-        height={200}
+        height={'auto'}
         mt={20}
         getEmblaApi={setEmbla}
-        initialSlide={0}
+        initialSlide={2}
       >
         <Carousel.Slide>
-          <div
-            style={{
-              height: '100%',
-              backgroundColor: 'gray',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: 'white',
-            }}
-          >
-            1
-          </div>
+          <ProductCard product={product}></ProductCard>
         </Carousel.Slide>
         <Carousel.Slide>
-          <div
-            style={{
-              height: '100%',
-              backgroundColor: 'gray',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: 'white',
-            }}
-          >
-            2
-          </div>
+          <ProductCard product={product}></ProductCard>
         </Carousel.Slide>
         <Carousel.Slide>
-          <div
-            style={{
-              height: '100%',
-              backgroundColor: 'gray',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: 'white',
-            }}
-          >
-            3
-          </div>
+          <ProductCard product={product}></ProductCard>
         </Carousel.Slide>
         <Carousel.Slide>
-          <div
-            style={{
-              height: '100%',
-              backgroundColor: 'gray',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: 'white',
-            }}
-          >
-            4
-          </div>
+          <ProductCard product={product}></ProductCard>
         </Carousel.Slide>
         <Carousel.Slide>
-          <div
-            style={{
-              height: '100%',
-              backgroundColor: 'gray',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: 'white',
-            }}
-          >
-            5
-          </div>
+          <ProductCard product={product}></ProductCard>
+        </Carousel.Slide>
+        <Carousel.Slide>
+          <ProductCard product={product}></ProductCard>
+        </Carousel.Slide>
+        <Carousel.Slide>
+          <ProductCard product={product}></ProductCard>
+        </Carousel.Slide>
+        <Carousel.Slide>
+          <ProductCard product={product}></ProductCard>
         </Carousel.Slide>
       </Carousel>
       <Progress value={scrollProgress} maw={320} size="sm" mt="xl" mx="auto" />

@@ -13,6 +13,8 @@ import img8 from './img8.jpg';
 import img9 from './img9.jpg';
 import img10 from './img10.jpg';
 
+import idealPhoto from './DimensionesIdealesParaWeb.jpg'
+
 export {
   LogoDabena,
   LogoDabenaTextoBlanco,
@@ -28,4 +30,5 @@ export {
   img8,
   img9,
   img10,
+  idealPhoto
 };
