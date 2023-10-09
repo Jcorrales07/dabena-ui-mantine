@@ -41,7 +41,7 @@ function ProductCarousel() {
       </Title>
       <Carousel
         dragFree
-        slideSize={{xs: "30%"}}
+        slideSize={{base: '65%', md: '35%', sm: '30%', xs: '35%', lg: '25%', xl: '20%'}}
         slideGap="md"
         height={'auto'}
         mt={20}
