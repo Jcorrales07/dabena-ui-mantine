@@ -75,7 +75,7 @@ function Navbar() {
   const goTo = ({ path }: { path: string }) => {
     console.log(`path: ${path}`);
     navigate(path);
-    window.location.reload();
+    navigate(0);
   };
 
   return (
