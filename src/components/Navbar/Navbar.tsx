@@ -10,6 +10,7 @@ import {
   useMantineColorScheme,
   rem,
   Image,
+  Anchor,
 } from '@mantine/core';
 
 import { useDisclosure } from '@mantine/hooks';
@@ -63,19 +64,15 @@ function Navbar() {
   };
 
   const decideMode = () => {
-    console.log('antes', colorScheme);
     if (modeToggle) {
       setLightMode();
     } else {
       setDarkMode();
     }
-    console.log('despues', colorScheme);
   };
 
   const goTo = ({ path }: { path: string }) => {
-    console.log(`path: ${path}`);
     navigate(path);
-    // navigate(0);
   };
 
   return (
