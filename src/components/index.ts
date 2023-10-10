@@ -5,5 +5,17 @@ import PhotoCarousel from './PhotoCarousel/PhotoCarousel';
 import ProductCarousel from './ProductCarousel/ProductCarousel';
 import ProductCard from './ProductCard/ProductCard';
 import VistaPrueba from './ComponentePrueba/VistaPrueba';
+import ScrollToTop from './ScrollToTop/ScrollToTop';
+import BusinessLocation from './BusinessLocation/BusinessLocation';
 
-export { Footer, Navbar, ProductSection, PhotoCarousel, ProductCarousel, ProductCard, VistaPrueba };
+export {
+  Footer,
+  Navbar,
+  ProductSection,
+  PhotoCarousel,
+  ProductCarousel,
+  ProductCard,
+  VistaPrueba,
+  ScrollToTop,
+  BusinessLocation
+};

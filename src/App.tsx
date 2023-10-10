@@ -2,7 +2,7 @@
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
 import { MantineProvider } from '@mantine/core';
-import { Footer, Navbar } from './components';
+import { Footer, Navbar, ScrollToTop } from './components';
 import { theme } from './theme';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -13,6 +13,7 @@ export default function App() {
   return (
     <MantineProvider theme={theme}>
       <Router>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

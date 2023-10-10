@@ -10,7 +10,6 @@ import {
   useMantineColorScheme,
   rem,
   Image,
-  Container,
 } from '@mantine/core';
 
 import { useDisclosure } from '@mantine/hooks';
@@ -23,24 +22,26 @@ function Navbar() {
   const { setColorScheme, colorScheme } = useMantineColorScheme();
   const navigate = useNavigate();
 
-  const [modeToggle, setModeToggle] = useState(true);
+  const [modeToggle, setModeToggle] = useState<boolean>();
 
   const setLightMode = () => {
-    setColorScheme('light');
     setModeToggle((prev) => !prev);
+    setColorScheme('light');
   };
 
   const setDarkMode = () => {
-    setColorScheme('dark');
     setModeToggle((prev) => !prev);
+    setColorScheme('dark');
   };
 
   const decideMode = () => {
+    console.log("antes", colorScheme);
     if (modeToggle) {
-      setDarkMode();
-    } else {
       setLightMode();
+    } else {
+      setDarkMode();
     }
+    console.log("despues", colorScheme);
   };
 
   return (
@@ -98,15 +99,15 @@ function Navbar() {
             )}
 
             <Group ml="xl" gap={0} visibleFrom="sm" justify="center" align="center">
-              <UnstyledButton className={classes.control}>Home</UnstyledButton>
+              <UnstyledButton className={classes.control}>Inicio</UnstyledButton>
               <UnstyledButton className={classes.control}>Blog</UnstyledButton>
               <UnstyledButton className={classes.control}>Contacts</UnstyledButton>
               <UnstyledButton className={classes.control}>Support</UnstyledButton>
               <UnstyledButton className={classes.control} onClick={decideMode}>
                 {modeToggle ? (
-                  <IconMoonStars style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
-                ) : (
                   <IconSun style={{ width: rem(20), height: rem(20) }} stroke={1.5} />
+                  ) : (
+                  <IconMoonStars style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
                 )}
               </UnstyledButton>
             </Group>
