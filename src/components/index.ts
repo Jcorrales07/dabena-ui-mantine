@@ -7,6 +7,7 @@ import ProductCard from './ProductCard/ProductCard';
 import VistaPrueba from './ComponentePrueba/VistaPrueba';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
 import BusinessLocation from './BusinessLocation/BusinessLocation';
+import FaqsSection from '../pages/FAQsView/FaqsSection';
 
 export {
   Footer,
@@ -17,5 +18,6 @@ export {
   ProductCard,
   VistaPrueba,
   ScrollToTop,
-  BusinessLocation
+  BusinessLocation,
+  FaqsSection,
 };

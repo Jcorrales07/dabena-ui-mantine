@@ -1,11 +1,8 @@
-import { Navigate, useNavigate } from 'react-router-dom';
 import { img5, img7, img8, img9, img10 } from '../assets';
 
 import { ProductSection, PhotoCarousel, ProductCarousel, BusinessLocation } from '../components';
 
 export default function HomePage() {
-  const navigate = useNavigate();
-
   return (
     <div
       style={{
@@ -29,7 +26,7 @@ export default function HomePage() {
 
       <ProductCarousel />
 
-      <BusinessLocation></BusinessLocation>
+      <BusinessLocation text="Encuentranos:" />
     </div>
   );
 }

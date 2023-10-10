@@ -17,6 +17,34 @@ import { useDisclosure } from '@mantine/hooks';
 import classes from './MobileNavbar.module.css';
 import { useNavigate } from 'react-router-dom';
 
+const navlinks = [
+  {
+    id: 1,
+    name: 'Inicio',
+    path: '/',
+  },
+  {
+    id: 2,
+    name: 'Nosotros',
+    path: '/nosotros',
+  },
+  {
+    id: 6,
+    name: 'Blog',
+    path: '/blog',
+  },
+  {
+    id: 3,
+    name: 'Puntos de venta',
+    path: '/puntos-de-venta',
+  },
+  {
+    id: 4,
+    name: 'FAQs',
+    path: '/faqs',
+  },
+];
+
 function Navbar() {
   const [opened, { toggle }] = useDisclosure();
   const { setColorScheme, colorScheme } = useMantineColorScheme();
@@ -35,13 +63,18 @@ function Navbar() {
   };
 
   const decideMode = () => {
-    console.log("antes", colorScheme);
+    console.log('antes', colorScheme);
     if (modeToggle) {
       setLightMode();
     } else {
       setDarkMode();
     }
-    console.log("despues", colorScheme);
+    console.log('despues', colorScheme);
+  };
+
+  const goTo = ({ path }: { path: string }) => {
+    console.log(`path: ${path}`);
+    navigate(path);
   };
 
   return (
@@ -66,9 +99,7 @@ function Navbar() {
               style={{
                 cursor: 'pointer',
               }}
-              onClick={() => {
-                navigate('/');
-              }}
+              onClick={() => goTo({ path: '/' })}
             />
             {colorScheme === 'light' ? (
               <Image
@@ -79,9 +110,7 @@ function Navbar() {
                 style={{
                   cursor: 'pointer',
                 }}
-                onClick={() => {
-                  navigate('/');
-                }}
+                onClick={() => goTo({ path: '/' })}
               />
             ) : (
               <Image
@@ -92,21 +121,26 @@ function Navbar() {
                 style={{
                   cursor: 'pointer',
                 }}
-                onClick={() => {
-                  navigate('/');
-                }}
+                onClick={() => goTo({ path: '/' })}
               />
             )}
 
             <Group ml="xl" gap={0} visibleFrom="sm" justify="center" align="center">
-              <UnstyledButton className={classes.control}>Inicio</UnstyledButton>
-              <UnstyledButton className={classes.control}>Blog</UnstyledButton>
-              <UnstyledButton className={classes.control}>Contacts</UnstyledButton>
-              <UnstyledButton className={classes.control}>Support</UnstyledButton>
+              {navlinks.map((link) => (
+                <UnstyledButton
+                  key={link.id}
+                  className={classes.control}
+                  onClick={() => {
+                    goTo({ path: link.path });
+                  }}
+                >
+                  {link.name}
+                </UnstyledButton>
+              ))}
               <UnstyledButton className={classes.control} onClick={decideMode}>
                 {modeToggle ? (
                   <IconSun style={{ width: rem(20), height: rem(20) }} stroke={1.5} />
-                  ) : (
+                ) : (
                   <IconMoonStars style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
                 )}
               </UnstyledButton>
@@ -116,10 +150,15 @@ function Navbar() {
       </AppShell.Header>
 
       <AppShell.Navbar py="md" px={4}>
-        <UnstyledButton className={classes.control}>Home</UnstyledButton>
-        <UnstyledButton className={classes.control}>Blog</UnstyledButton>
-        <UnstyledButton className={classes.control}>Contacts</UnstyledButton>
-        <UnstyledButton className={classes.control}>Support</UnstyledButton>
+        {navlinks.map((link) => (
+          <UnstyledButton
+            key={link.id}
+            className={classes.control}
+            onClick={() => goTo({ path: link.path })}
+          >
+            {link.name}
+          </UnstyledButton>
+        ))}
         <UnstyledButton className={classes.control} onClick={decideMode}>
           {modeToggle ? (
             <IconMoonStars style={{ width: rem(18), height: rem(18) }} stroke={1.5} />

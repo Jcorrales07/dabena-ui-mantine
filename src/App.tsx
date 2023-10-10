@@ -6,8 +6,9 @@ import { Footer, Navbar, ScrollToTop } from './components';
 import { theme } from './theme';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AllProducts, HomePage } from './pages';
+import { AllProducts, HomePage, FaqsSection } from './pages';
 import VistaPrueba from './components/ComponentePrueba/VistaPrueba';
+import WhosalersLocationSection from './pages/WholesalersLocationSection/WhosalersLocationSection';
 
 export default function App() {
   return (
@@ -25,6 +26,12 @@ export default function App() {
             path="/quiero-ser-mayorista"
             element={<VistaPrueba text="quiero ser mayorista" />}
           />
+          <Route path="/nosotros" element={<VistaPrueba text="nosotros" />} />
+          <Route path="/blog" element={<VistaPrueba text="blog" />} />
+          <Route path="/puntos-de-venta" element={<WhosalersLocationSection />} />
+          <Route path="/faqs" element={<FaqsSection />} />
+
+          <Route path="*" element={<VistaPrueba text="404 error" />} />
         </Routes>
         <Footer />
       </Router>
