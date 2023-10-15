@@ -1,15 +1,21 @@
-import { Container, Title } from '@mantine/core';
+import { Container, Text, Title } from '@mantine/core';
 
-function BusinessLocation({text}: {text: string}) {
+function BusinessLocation({ text, direction }: { direction: string; text: string }) {
   return (
     <Container
       style={{
         marginTop: '60px',
       }}
     >
-      <Title mb={'20px'} style={{
-        textAlign: 'center',
-      }}>{text}</Title>
+      <Title
+        mb={'20px'}
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        {text}
+        <Text>{direction}</Text>
+      </Title>
       <Container
         m={0}
         style={{

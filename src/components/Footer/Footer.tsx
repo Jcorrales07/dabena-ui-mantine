@@ -97,7 +97,11 @@ export default function FooterLinks() {
             <IconBrandYoutube style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandInstagram style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+            <IconBrandInstagram
+              style={{ width: rem(18), height: rem(18) }}
+              stroke={1.5}
+              href="https://www.instagram.com/dabenaoficial_hn/"
+            />
           </ActionIcon>
         </Group>
       </Container>
