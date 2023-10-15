@@ -26,7 +26,7 @@ export default function HomePage() {
 
       <ProductCarousel />
 
-      <BusinessLocation text="Encuentranos:" />
+      <BusinessLocation text="Encuentranos:" direction='Ba. Medina. 12 Calle, 3 y 4 Avenida.'/>
     </div>
   );
 }

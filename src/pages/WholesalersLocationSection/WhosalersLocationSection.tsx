@@ -59,7 +59,7 @@ function WhosalersLocationSection() {
       </Container>
 
       <Title ta={'center'}>Encuentra Tu Punto Más Cercano</Title>
-      <BusinessLocation text="Dabena GNS" direction="Ba. Medina, 12 Calle, 3 y 4 Avenida" />
+      <BusinessLocation text="Dabena GNS" direction="Ba. Medina. 12 Calle, 3 y 4 Avenida" />
     </Container>
   );
 }
