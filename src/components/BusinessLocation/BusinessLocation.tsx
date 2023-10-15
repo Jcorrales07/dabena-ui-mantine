@@ -1,6 +1,6 @@
 import { Container, Text, Title } from '@mantine/core';
 
-function BusinessLocation({ text, direction }: { direction: string; text: string }) {
+function BusinessLocation({ text, direction }: { direction: string, text: string }) {
   return (
     <Container
       style={{
