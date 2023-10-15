@@ -73,6 +73,7 @@ function Navbar() {
 
   const goTo = ({ path }: { path: string }) => {
     navigate(path);
+    // navigate(0)
   };
 
   return (
